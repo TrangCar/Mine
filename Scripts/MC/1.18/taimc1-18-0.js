@@ -48,8 +48,7 @@ slider.addEventListener("touchmove", (e) => {
 
 // quay lại
 function goBack() {
-    if (document.referrer && document.referrer.includes("index")) {
-        // nếu có trang trước là index → quay lại bình thường
+    if (history.length > 1) {
         window.history.back();
     } else {
         // nếu mở trực tiếp → chuyển về index
