@@ -48,7 +48,7 @@ slider.addEventListener("touchmove", (e) => {
 
 // quay lại
 function goBack() {
-    if (history.length > 1) {
+    if (sessionStorage.getItem("fromIndex")) {
         window.history.back();
     } else {
         // nếu mở trực tiếp → chuyển về index

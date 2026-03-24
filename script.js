@@ -1,3 +1,4 @@
+sessionStorage.setItem("fromIndex", "true");
 const searchInput = document.getElementById("searchInput");
 
 let selectedTag = "all";
