@@ -52,6 +52,6 @@ function goBack() {
         window.history.back();
     } else {
         // nếu mở trực tiếp → chuyển về index
-        window.location.href = "../../index.html";
+        window.location.href = "../../../index.html";
     }
 }
