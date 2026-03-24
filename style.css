@@ -8,6 +8,7 @@ body {
 /* Search */
 .search-container {
     margin-bottom: 15px;
+    margin-top: 75px;
 }
 
 .search-container input {
@@ -81,6 +82,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(384px, 1fr));
     gap: 15px;
+    margin-top: 25px;
 }
 
 /* Card */
