@@ -19,6 +19,7 @@ body {
     font-size: 16px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
 }
 
 .search-container input:focus {
@@ -150,19 +151,4 @@ body {
     overflow: hidden;
 
     line-clamp: 2;               /* chuẩn mới (trình duyệt hỗ trợ dần) */
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 2.5em;
-    }
-
-    .card .image {
-        height: 300px; /* 120 * 2.5 */
-    }
-
-    .search-container input {
-        padding: 30px;
-        font-size: 2.5em;
-    }
 }
