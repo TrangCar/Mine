@@ -11,28 +11,32 @@ function sortTags() {
     const tagContainer = document.getElementById("tagContainer");
     const tagsArray = Array.from(tagContainer.querySelectorAll(".tag"));
 
-    const activeTag = tagsArray.find(t => t.classList.contains("active"));
-    const otherTags = tagsArray.filter(t => !t.classList.contains("active"));
-
     function compareTags(a, b) {
-        const textA = a.textContent.trim();
-        const textB = b.textContent.trim();
+        const tagA = a.dataset.tag;
+        const tagB = b.dataset.tag;
 
-        const numA = parseFloat(textA);
-        const numB = parseFloat(textB);
+        // "all" luôn đứng đầu
+        if (tagA === "all") return -1;
+        if (tagB === "all") return 1;
 
+        const numA = parseFloat(tagA);
+        const numB = parseFloat(tagB);
+
+        // số → số
         if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+
+        // số đứng trước chữ
         if (!isNaN(numA)) return -1;
         if (!isNaN(numB)) return 1;
 
-        return textA.localeCompare(textB, 'vi', { sensitivity: 'base' });
+        // chữ → chữ
+        return tagA.localeCompare(tagB, 'vi', { sensitivity: 'base' });
     }
 
-    otherTags.sort(compareTags);
+    tagsArray.sort(compareTags);
 
     tagContainer.innerHTML = "";
-    if (activeTag) tagContainer.appendChild(activeTag);
-    otherTags.forEach(t => tagContainer.appendChild(t));
+    tagsArray.forEach(t => tagContainer.appendChild(t));
 }
 
 // ======================
@@ -79,6 +83,7 @@ function filter() {
     });
 
     sortCards(); // sắp xếp card sau khi lọc
+    
 }
 
 // ======================
@@ -95,6 +100,8 @@ tags.forEach(tag => {
 
         tags.forEach(t => t.classList.remove("active"));
         tag.classList.add("active");
+
+        history.pushState(null, "", "?tag=" + selectedTag);
 
         filter();
         
@@ -118,6 +125,8 @@ fileTags.forEach(tag => {
             t.classList.remove("active");
             if (t.dataset.tag === tagText) t.classList.add("active");
         });
+
+        history.pushState(null, "", "?tag=" + selectedTag);
 
         filter();
         
@@ -157,5 +166,7 @@ if (initialTag) {
 // Gọi filter và sắp xếp khi load
 // ======================
 window.addEventListener("load", () => {
+    sortTags();  
     filter();
+    
 });
