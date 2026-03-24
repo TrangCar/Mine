@@ -1,0 +1,152 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+#desc {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+#desc b {
+    font-weight: bold;
+}
+
+#desc a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Back */
+.back {
+    position: absolute;         /* luôn ở góc trái trên */
+    top: 20px;
+    left: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+
+    background: linear-gradient(135deg, #4a90e2, #50c0e9); /* gradient đẹp */
+    border-radius: 16px;        /* bo tròn */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Hover */
+.back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #357ABD, #3FB3DD); /* gradient hover tối hơn */
+}
+
+/* Icon mũi tên */
+.back::before {
+    content: "⬅";   
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+/* Banner */
+.banner {
+    height: 180px;
+    background: #4a90e2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avatar */
+/* Avatar luôn nổi lên */
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: gray; /* mặc định nếu chưa có hình */
+    margin: -60px auto 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Luôn nổi lên */
+    transform: scale(1.08);           /* phóng to nhẹ luôn */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);  /* bóng đổ nổi bật */
+
+    /* Không cho chọn hoặc kéo */
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;  /* vẫn nhận hover nếu muốn */
+}
+
+/* Content image */
+.content-img {
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.content-img:active {
+    cursor: grabbing;
+}
+
+.content-img img {
+    min-width: 480px;
+    height: 240px;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    pointer-events: none; /* cực kỳ quan trọng */
+}
+
+/* Button */
+.download {
+    margin-top: 20px;
+    padding: 14px 40px;             /* dày hơn, rộng hơn */
+    border: none;
+    border-radius: 25px;            /* bo tròn đẹp */
+    background: #2bb3c0;            /* màu chính */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;      /* hiệu ứng mượt */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* nổi lên */
+}
+
+.download a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Khi hover */
+.download:hover {
+    background: #25a0ac;            /* đổi màu nhạt hơn */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* nổi bật hơn */
+}
+
+/* Khi nhấn click */
+.download:active {
+    transform: translateY(3px);     /* hạ xuống 3px */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);   /* bóng giảm đi */
+}
