@@ -1,35 +1,39 @@
 const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
-const tags = document.querySelectorAll(".tag");
 
 let selectedTag = "all";
 
 // ======================
-// Hàm sắp xếp thẻ tag
+// Lấy động
+// ======================
+function getCards() {
+    return document.querySelectorAll(".card");
+}
+
+function getTags() {
+    return document.querySelectorAll(".tag");
+}
+
+// ======================
+// Sort TAG (1 lần)
 // ======================
 function sortTags() {
     const tagContainer = document.getElementById("tagContainer");
-    const tagsArray = Array.from(tagContainer.querySelectorAll(".tag"));
+    const tagsArray = Array.from(getTags());
 
     function compareTags(a, b) {
         const tagA = a.dataset.tag;
         const tagB = b.dataset.tag;
 
-        // "all" luôn đứng đầu
         if (tagA === "all") return -1;
         if (tagB === "all") return 1;
 
         const numA = parseFloat(tagA);
         const numB = parseFloat(tagB);
 
-        // số → số
         if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
-
-        // số đứng trước chữ
         if (!isNaN(numA)) return -1;
         if (!isNaN(numB)) return 1;
 
-        // chữ → chữ
         return tagA.localeCompare(tagB, 'vi', { sensitivity: 'base' });
     }
 
@@ -40,11 +44,11 @@ function sortTags() {
 }
 
 // ======================
-// Hàm sắp xếp các card
+// Sort CARD
 // ======================
 function sortCards() {
     const grid = document.getElementById("fileGrid");
-    const cardsArray = Array.from(grid.querySelectorAll(".card"));
+    const cardsArray = Array.from(getCards());
 
     cardsArray.sort((a, b) => {
         const nameA = a.querySelector("h3").textContent.trim();
@@ -65,108 +69,109 @@ function sortCards() {
 }
 
 // ======================
-// Hàm filter
+// FILTER
 // ======================
 function filter() {
     const text = searchInput.value.toLowerCase();
 
-    cards.forEach(card => {
+    getCards().forEach(card => {
         const name = card.querySelector("h3").textContent.toLowerCase();
         let matchTag = true;
 
-        if (selectedTag && selectedTag !== "all") {
-            const cardTags = card.dataset.tags;
-            matchTag = cardTags.includes(selectedTag);
+        if (selectedTag !== "all") {
+            matchTag = card.dataset.tags.includes(selectedTag);
         }
 
         card.style.display = (name.includes(text) && matchTag) ? "block" : "none";
     });
 
-    sortCards(); // sắp xếp card sau khi lọc
-    
+    sortCards();
 }
 
 // ======================
-// Tìm kiếm khi gõ
+// SEARCH
 // ======================
 searchInput.addEventListener("input", filter);
 
 // ======================
-// Click tag trên thanh
+// EVENT DELEGATION (🔥 QUAN TRỌNG)
 // ======================
-tags.forEach(tag => {
-    tag.addEventListener("click", () => {
-        selectedTag = tag.dataset.tag || "all";
 
-        tags.forEach(t => t.classList.remove("active"));
-        tag.classList.add("active");
+// click TAG trên thanh
+document.getElementById("tagContainer").addEventListener("click", (e) => {
+    const tag = e.target.closest(".tag");
+    if (!tag) return;
 
-        history.pushState(null, "", "?tag=" + selectedTag);
+    selectedTag = tag.dataset.tag || "all";
 
-        filter();
-        
+    getTags().forEach(t => t.classList.remove("active"));
+    tag.classList.add("active");
+
+    history.pushState(null, "", "?tag=" + selectedTag);
+
+    filter();
+});
+
+// click file-tag trong card
+document.getElementById("fileGrid").addEventListener("click", (e) => {
+    const tag = e.target.closest(".file-tag");
+    if (!tag) return;
+
+    e.stopPropagation();
+    e.preventDefault();
+
+    const tagText = tag.dataset.tag;
+    selectedTag = tagText;
+
+    getTags().forEach(t => {
+        t.classList.remove("active");
+        if (t.dataset.tag === tagText) t.classList.add("active");
     });
+
+    history.pushState(null, "", "?tag=" + selectedTag);
+
+    filter();
 });
 
 // ======================
-// Click file-tag trong card
+// LOAD THUMB
 // ======================
-const fileTags = document.querySelectorAll(".file-tag");
+function loadThumbs() {
+    getCards().forEach(card => {
+        const thumb = card.dataset.thumb;
+        const imageDiv = card.querySelector(".image");
 
-fileTags.forEach(tag => {
-    tag.addEventListener("click", (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-
-        const tagText = tag.dataset.tag;
-        selectedTag = tagText;
-
-        tags.forEach(t => {
-            t.classList.remove("active");
-            if (t.dataset.tag === tagText) t.classList.add("active");
-        });
-
-        history.pushState(null, "", "?tag=" + selectedTag);
-
-        filter();
-        
+        if (thumb) {
+            imageDiv.style.backgroundImage = `url(${thumb})`;
+            imageDiv.style.backgroundSize = "cover";
+            imageDiv.style.backgroundPosition = "center";
+        }
     });
-});
+}
 
 // ======================
-// Load hình thumb cho card
+// URL TAG
 // ======================
-document.querySelectorAll(".card").forEach(card => {
-    const thumb = card.dataset.thumb;
-    const imageDiv = card.querySelector(".image");
+function loadTagFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialTag = urlParams.get("tag");
 
-    if (thumb) {
-        imageDiv.style.backgroundImage = `url(${thumb})`;
-        imageDiv.style.backgroundSize = "cover";
-        imageDiv.style.backgroundPosition = "center";
-    }
-});
-
-// ======================
-// Xử lý tag từ URL (detail -> index)
-// ======================
-const urlParams = new URLSearchParams(window.location.search);
-const initialTag = urlParams.get('tag');
-
-if (initialTag) {
-    const targetTag = Array.from(tags).find(t => t.dataset.tag === initialTag);
-    if (targetTag) {
-        tags.forEach(t => t.classList.remove("active"));
-        targetTag.classList.add("active");
+    if (initialTag) {
         selectedTag = initialTag;
+
+        getTags().forEach(t => {
+            t.classList.remove("active");
+            if (t.dataset.tag === initialTag) t.classList.add("active");
+        });
     }
 }
 
 // ======================
-// Gọi filter và sắp xếp khi load
+// INIT
 // ======================
 window.addEventListener("load", () => {
-    sortTags();  
-    filter();
-    
+    sortTags();        // sort 1 lần
+    loadThumbs();      // load ảnh
+    loadTagFromURL();  // lấy tag từ URL
+    filter();          // filter + sort card
 });
