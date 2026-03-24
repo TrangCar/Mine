@@ -155,3 +155,18 @@ body {
 
     line-clamp: 2;               /* chuẩn mới (trình duyệt hỗ trợ dần) */
 }
+
+/* Áp dụng cho mobile */
+@media (max-width: 768px) {
+    .scroll-container {
+        overflow: auto;
+
+        /* Ẩn scrollbar */
+        scrollbar-width: none;      /* Firefox */
+        -ms-overflow-style: none;   /* IE, Edge cũ */
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+}
