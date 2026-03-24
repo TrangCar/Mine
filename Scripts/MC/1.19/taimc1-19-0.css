@@ -165,3 +165,34 @@ body {
         display: none; /* Chrome, Safari */
     }
 }
+
+@media (max-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
+    .banner {
+        height: 260px;
+    }
+
+    .avatar {
+        width: 180px;
+        height: 180px;
+        margin: -90px auto 20px;
+    }
+
+    .content-img img {
+        min-width: 90%;
+        height: 300px;
+    }
+
+    .download {
+        font-size: 22px;
+        padding: 18px 50px;
+    }
+
+    .back {
+        font-size: 20px;
+        padding: 14px 24px;
+    }
+}
