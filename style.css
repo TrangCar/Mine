@@ -159,6 +159,11 @@ body {
 /* Áp dụng cho mobile */
 @media (max-width: 768px) {
     .tags {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tags::-webkit-scrollbar {
         display: none;
     }
 }
