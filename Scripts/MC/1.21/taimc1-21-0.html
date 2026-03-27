@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft 1.21</title>
+    <link rel="stylesheet" href="../../../Detail.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+</head>
+<body>
+
+    <!-- Back -->
+    <div class="back" onclick="goBack()">quay lại</div>
+
+    <!-- Banner -->
+    <div class="banner" id="banner"
+         style="background-image: url(''); background-size: cover;">
+        <h1>Minecraft 1.21</h1>
+    </div>
+
+    <!-- Avatar -->
+    <div class="avatar"
+         style="background-image: url('Avart-MC-1.21.png'); background-size: cover;">
+    </div>
+
+    <!-- Name -->
+    <h2>Minecraft 1.21 Tricky Trials Update</h2>
+
+    <!-- Image -->
+    <div class="content-img" id="contentImgs">
+        <img src="dong-vat-armadillo-va-tinh-nang-giap-gio.webp">
+        <img src="images (1).jpg">
+        <img src="images (2).jpg">
+        <img src="images (3).jpg">
+        <img src="images.jpg">
+        <img src="kham-pha-cau-truc-phong-thi-nghiem-trial-chambers.webp">
+        <img src="khoi-bong-den-copper-bulb.webp">
+    </div>
+
+    <!-- Description -->
+    <p id="desc">
+        <b>Tổng quan:</b>
+        Minecraft 1.21, còn được gọi là Tricky Trials Update, là một bản cập nhật lớn tập trung vào việc nâng cao trải 
+        nghiệm chiến đấu, khám phá dungeon và tự động hóa trong game. Khác với các bản cập nhật trước thiên về sinh vật 
+        hoặc biome, phiên bản này đi sâu vào gameplay cốt lõi, đặc biệt là thử thách và cơ chế chiến đấu.
+        <br>
+        <b>Trial Chambers (Công trình mới):</b>
+        Trial Chambers là một loại dungeon hoàn toàn mới được tạo ra dưới lòng đất. Công trình này được xây dựng 
+        chủ yếu bằng Copper (đồng) và Tuff (đá), mang phong cách cổ đại và bí ẩn. Bên trong Trial Chambers 
+        có nhiều phòng khác nhau, mỗi phòng là một thử thách riêng bao gồm bẫy, quái vật và phần thưởng. 
+        Điểm đặc biệt là các thử thách này được thiết kế để phù hợp với số lượng người chơi, 
+        giúp trải nghiệm trở nên cân bằng hơn trong cả chơi đơn và multiplayer.
+        <br>
+        <b>Trial Spawner (Spawner mới):</b>
+        Trial Spawner là một loại spawner hoàn toàn mới xuất hiện trong Trial Chambers. Khác với spawner thông thường, 
+        nó sẽ spawn quái dựa trên số lượng người chơi tham gia. Sau khi hoàn thành thử thách, spawner sẽ dừng lại 
+        và có thể reset sau một khoảng thời gian, tạo ra trải nghiệm giống như các dungeon trong game nhập vai.
+        <br>
+        <b>Mob mới:</b>
+        Breeze: Là một mob hostile sống trong Trial Chambers. Nó sử dụng sức mạnh gió để tấn công, 
+        có thể đẩy người chơi ra xa và tương tác với môi trường như kích hoạt các cơ chế redstone. 
+        Armadillo: Là mob trung lập, khi bị tấn công sẽ cuộn tròn lại để phòng thủ. 
+        Nó cung cấp vật phẩm Armadillo Scute dùng để chế tạo giáp cho sói.
+        <br>
+        <b>Vũ khí mới:</b> 
+        Mace: Là vũ khí cận chiến cực mạnh, gây sát thương lớn khi người chơi tấn công từ trên cao xuống. 
+        Càng rơi từ độ cao lớn thì sát thương càng cao, tạo ra phong cách chiến đấu hoàn toàn mới.
+        <br>
+        <b>Crafter (Khối chế tạo tự động):</b> 
+        Crafter là một block rất quan trọng cho những người chơi thích redstone. Nó cho phép chế tạo item tự động 
+        khi được kích hoạt bằng tín hiệu redstone. Người chơi có thể kết hợp với hopper để tạo ra dây chuyền 
+        sản xuất hoàn chỉnh, mở ra khả năng xây dựng máy móc phức tạp.
+        <br>
+        <b>Block mới:</b>
+        Minecraft 1.21 bổ sung nhiều block mới, đặc biệt là từ Copper và Tuff: Copper có thêm cửa, trapdoor, 
+        đèn (Copper Bulb) và nhiều block trang trí khác. Các block này có thể bị oxy hóa theo thời gian.
+        Tuff có thêm các biến thể như Tuff Brick, Polished Tuff và Chiseled Tuff, phù hợp cho xây dựng và trang trí.
+        <br>
+        <b>Vật phẩm mới:</b>
+        Trial Key: Dùng để mở các rương đặc biệt trong Trial Chambers; 
+        Ominous Bottle: Khi sử dụng sẽ kích hoạt chế độ thử thách khó hơn với phần thưởng tốt hơn;
+        Wind Charge: Cho phép người chơi sử dụng sức mạnh gió tương tự Breeze để tấn công hoặc di chuyển.
+        <br>
+        <b>Cơ chế gameplay mới:</b>
+        Minecraft 1.21 giới thiệu hệ thống Ominous Events. Khi kích hoạt bằng Ominous Bottle, 
+        các thử thách trong dungeon sẽ trở nên khó hơn nhưng đổi lại phần thưởng cũng giá trị hơn. 
+        Điều này tạo thêm chiều sâu chiến thuật cho người chơi.
+        <br>
+        <b>Trang trí và nội dung phụ:</b>
+        Bản cập nhật cũng bổ sung thêm nhiều nội dung nhỏ giúp game sinh động hơn như tranh mới, 
+        nhạc nền mới và đĩa nhạc mới. Những yếu tố này không ảnh hưởng trực tiếp đến gameplay 
+        nhưng giúp tăng trải nghiệm tổng thể.
+        <br>
+        <b>Các bản cập nhật nhỏ (1.21.x):</b>
+        Sau khi phát hành phiên bản chính, Mojang tiếp tục cập nhật các bản nhỏ để sửa lỗi, 
+        tối ưu hiệu năng và cân bằng gameplay. Một số bản còn bổ sung thêm mob, cải tiến giao diện và hiệu ứng môi trường.
+        
+        <br>
+        
+    </p>
+    <br>
+
+    <!-- Download -->
+    <h1 id="desc">Các phiên bản</h1>
+    <div class="download-list">
+        <div class="download-item">
+            <span>1.21.132</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/I4stS0ki', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.131</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/wKlPMwl5', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.130</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/BV3FnNgq', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.124</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/yCoSVMkO', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.123</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/w0aTDcFW', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.121</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/zrIA1jxf', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.120</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/omDwi3GC', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.114</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/7uqyV9JG', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.113</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/dQs8GbXB', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.111</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/1sIxhEgS', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.101</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/sMEfj0Pd', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.100</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/8LXzKX9I', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.94</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/6wk6ONqg', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.93</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/L3p5pRl8', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.92</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/pkUse7Jy', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.90</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/hL0wOnX8', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.81</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/imnl3BDk', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.80</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/oHqhS2o8', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.72</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/0qfKEYX1', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.71</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/sxBqSGaX', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.70</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/64YXjIJO', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.62</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/TkRwK7Wm', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.61</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/NUiiFL2D', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.60</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/aza06Tnp', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.51</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/7JYfvCOr', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.50</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/NVUZelqa', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.44</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/1AuswF88', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.43</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/I9P1Crc9', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.41</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/J27NOcVC', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.40</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/8DD5tFy8', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.31</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/w4OMRGJz', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.30</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/0g8mJ8TQ', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.23</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/3HvsqIOh', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.22</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/hSd4Gc5z', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.21</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/CeYezG70', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.20</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/pHLROtwW', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.2</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/JHUytjPd', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.1</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/CYekFbDi', '_blank')">Tải xuống</button>
+        </div>
+        <div class="download-item">
+            <span>1.21.0</span>
+            <button class="download" onclick="window.open('https://yeumoney.com/go/gZzeGhng', '_blank')">Tải xuống</button>
+        </div>
+
+    </div><br><br><br>
+
+    <!-- Tags -->
+    <div id="tagsDetail">
+        <p id="desc">
+            <b>Tags:</b> <br>
+            <a class="file-tag" href="../../../index.html?tag=mc">#Các phiên bản MC</a>
+        </p>
+    </div>
+
+    <script src="../../../Detail.js"></script>
+</body>
+</html>
