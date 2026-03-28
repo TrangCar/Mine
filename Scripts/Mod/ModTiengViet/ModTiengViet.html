@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mod Tiếng Việt</title>
+    <link rel="stylesheet" href="../../../Detail.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+</head>
+<body>
+
+    <!-- Back -->
+    <div class="back" onclick="goBack()">quay lại</div>
+
+    <!-- Banner -->
+    <div class="banner" id="banner"
+         style="background-image: url(''); background-size: cover;">
+        <h1>Tyel Vietnamese</h1>
+    </div>
+
+    <!-- Avatar -->
+    <div class="avatar"
+         style="background-image: url('images.jpg'); background-size: cover;">
+    </div>
+
+    <!-- Name -->
+    <h2>Tyel Vietnamese 1.6.6</h2><br><br><br>
+
+    <!-- Description -->
+    <p id="desc">
+        <b>Tyel Vietnamese 1.6.6 là gì?</b><br>
+            Tyel Vietnamese 1.6.6 (The Ty-el’s Vietnamese Language Pack) là một gói ngôn ngữ dành cho Minecraft PE/Bedrock giúp chuyển toàn bộ giao diện từ tiếng Anh sang tiếng Việt.<br>
+            Gói này không thay đổi gameplay mà chỉ tập trung vào việc dịch nội dung trong game để người chơi dễ hiểu hơn.<br><br>
+
+        <b>Những điểm mới trong Tyel Vietnamese 1.6.6</b><br><br>
+
+            <b>1. Tương thích với phiên bản Minecraft mới</b><br>
+                Phiên bản 1.6.6 đã được cập nhật để hoạt động tốt với Minecraft 1.20 và 1.21.<br>
+                Giúp hạn chế lỗi thiếu chữ hoặc hiển thị sai khi game được cập nhật.<br><br>
+
+            <b>2. Việt hóa hơn 9000 nội dung</b><br>
+                Gói đã dịch hơn 9000+ dòng văn bản trong game.<br>
+                Bao gồm menu, vật phẩm, mob, hiệu ứng, hướng dẫn và nhiều nội dung khác.<br>
+                Gần như toàn bộ trải nghiệm game đều được chuyển sang tiếng Việt.<br><br>
+
+            <b>3. Dịch sát nghĩa, dễ hiểu</b><br>
+                Các thuật ngữ được dịch theo cách dễ hiểu và quen thuộc với người chơi Việt.<br>
+                Ví dụ:<br>
+
+                        * Enchanting Table → Bàn Phù Phép<br>
+                        * Strength → Sức Mạnh<br>
+                        * Weakness → Yếu Đuối<br><br>
+
+            <b>4. Hỗ trợ chế độ giáo dục (Chemistry)</b><br>
+                Các nguyên tố hóa học và nội dung trong chế độ học tập được dịch sang tiếng Việt.<br>
+                Giúp người chơi vừa chơi vừa học dễ dàng hơn.<br><br>
+
+            <b>5. Hỗ trợ Text-to-Speech</b><br>
+                Có thể đọc nội dung trong game bằng giọng nói.<br>
+                Phù hợp với trẻ em hoặc người không muốn đọc nhiều chữ.<br><br>
+
+            <b>6. Tùy chỉnh font chữ</b><br>
+                Có thể chọn giữa nhiều kiểu font:<br>
+
+                    * Unicode: hiển thị tiếng Việt rõ ràng, dễ đọc<br>
+                    * Minecraft Seven: giữ phong cách cổ điển của game<br><br>
+
+            <b>7. Dễ dàng bật/tắt</b><br>
+                Có thể bật hoặc tắt gói trong cài đặt mà không ảnh hưởng đến thế giới đã tạo.<br>
+                Không gây mất dữ liệu hoặc lỗi save game.<br><br>
+
+        <b>Những giới hạn của Tyel 1.6.6</b><br>
+            Một số nội dung không thể Việt hóa do giới hạn của Minecraft:<br>
+
+                * Marketplace<br>
+                * Thành tích (Achievements)<br>
+                * Điều khoản sử dụng<br>
+                * Nội dung mua hàng<br><br>
+
+            Một số tên riêng vẫn giữ nguyên như:<br>
+
+                * Creeper<br>
+                * Redstone<br>
+                * Piglin<br>
+                * Ghast<br><br>
+
+        <b>Trải nghiệm khi sử dụng</b><br>
+            Sau khi cài đặt, toàn bộ menu và vật phẩm sẽ hiển thị bằng tiếng Việt.<br>
+            Người chơi không cần biết tiếng Anh vẫn có thể hiểu và chơi game dễ dàng.<br>
+            Đặc biệt phù hợp với người mới hoặc người chơi muốn trải nghiệm game bằng tiếng Việt.<br><br>
+
+        <b>Kết luận</b><br>
+            Tyel Vietnamese 1.6.6 là một trong những gói Việt hóa Minecraft tốt và đầy đủ nhất hiện nay.<br>
+            Giúp người chơi hiểu rõ game hơn, dễ tiếp cận hơn và nâng cao trải nghiệm tổng thể.<br>
+
+        <br>
+        
+    </p>
+    <br>
+
+    <!-- Download -->
+     <button class="download" onclick="handleDownload()">Tải xuống</button>
+
+    </div><br><br><br>
+
+    <script src="../../../Detail.js"></script>
+    <script>
+        function handleDownload() {
+        const daTai = localStorage.getItem("daTaiFile");
+
+            if (daTai === "true") {
+                // Đã tải rồi → vào trang download
+                window.location.href = "../../../download.html";
+            } else {
+                // Chưa tải → đi quảng cáo
+                window.location.href = "https://yeumoney.com/go/UY66hzcX";
+            }
+        }
+    </script>
+</body>
+</html>

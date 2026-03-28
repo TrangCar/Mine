@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tải Xuống</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
+        /* Quảng cáo */
+        .ads {
+            margin-top: 30px;
+            padding: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .ads span {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tải xuống file</h1>
+        <p>Nhấn nút bên dưới để tải file về máy</p>
+
+        <button class="download-btn" onclick="downloadFile()">
+            Tải xuống
+        </button>
+
+        <!-- Quảng cáo -->
+        <div class="ads">
+            <span>Quảng cáo</span>
+            Đây là khu vực quảng cáo của bạn<br>
+            (Có thể dán Google AdSense vào đây)
+        </div>
+    </div>
+
+    <script>
+        function downloadFile() {
+            // set biến = true
+            localStorage.setItem("daTaiFile", "true");
+
+            // link tải thật
+            window.open("https://www.mediafire.com/file/nuz7kg9jjkzcatf/Ty-el_Vietnamese_v1.6.6.mcpack/file","_blank");
+        }
+</script>
+
+</body>
+</html>
