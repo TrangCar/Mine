@@ -120,6 +120,17 @@ body {
     pointer-events: none; /* cực kỳ quan trọng */
 }
 
+/* Video trong content-img */
+.content-img iframe {
+    min-width: 480px;
+    height: 240px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+
+    pointer-events: auto;
+}
+
 /* Button */
 .download {
     padding: 14px 40px;             /* dày hơn, rộng hơn */

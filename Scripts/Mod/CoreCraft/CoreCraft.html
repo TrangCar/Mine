@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Core Craft</title>
+    <link rel="stylesheet" href="../../../Detail.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+</head>
+<body>
+
+    <!-- Back -->
+    <div class="back" onclick="goBack()">quay lại</div>
+
+    <!-- Banner -->
+    <div class="banner" id="banner"
+         style="background-image: url(''); background-size: cover;">
+        <h1>Core Craft</h1>
+    </div>
+
+    <!-- Avatar -->
+    <div class="avatar"
+         style="background-image: url('Core-Craft.webp'); background-size: cover;">
+    </div>
+
+    <!-- Image -->
+    <div class="content-img" id="contentImgs">
+        <!-- video -->
+        <iframe id="ytVideo"
+            src="https://www.youtube.com/embed/cA_lx_Ey1ro?autoplay=1&mute=1&loop=1&playlist=cA_lx_Ey1ro&enablejsapi=1"
+            frameborder="0"
+            allow="autoplay"
+            allowfullscreen>
+        </iframe>
+        <!-- Ảnh -->
+        <img src="anh1.png">
+        <img src="anh2.png">
+        <img src="anh3.png">
+    </div>
+
+    <!-- Name -->
+    <h2>Core Craft</h2><br><br><br>
+
+    <!-- Description -->
+    <p id="desc">
+        <b>CoreCraft là gì?</b><br>
+        CoreCraft là một bản mod mở rộng lớn cho Minecraft, biến trò chơi từ sinh tồn cơ bản thành một 
+        trải nghiệm phiêu lưu RPG hoàn chỉnh. Mod bổ sung rất nhiều nội dung mới như thế giới (dimension), 
+        boss, mob, vũ khí, vật phẩm và biome, giúp gameplay trở nên phong phú và thử thách hơn.<br><br>
+
+        <b>Dimension (Thế giới mới)</b><br>
+        CoreCraft thêm nhiều chiều không gian hoàn toàn mới, mỗi nơi có phong cách và thử thách riêng:<br>
+        - Arcanum: Thế giới phép thuật với rừng ma thuật, lâu đài cổ và các pháp sư nguy hiểm.<br>
+        - Deep Mine: Hệ thống hầm mỏ sâu dưới lòng đất, chứa tài nguyên hiếm nhưng cực kỳ nguy hiểm.<br>
+        - The Nightmare: Dimension khó nhất với không khí u ám, quái vật mạnh và các thử thách phức tạp.<br><br>
+
+        <b>Boss mới</b><br>
+        Mod có hơn 20 boss khác nhau, mỗi boss đều có kỹ năng riêng, độ khó cao và phần thưởng đặc biệt. Người 
+        chơi phải chuẩn bị kỹ trang bị và chiến thuật để đánh bại chúng. Đây là điểm nhấn chính của CoreCraft.<br><br>
+
+        <b>Mob mới</b><br>
+        Có hơn 25 loại mob mới được thêm vào game, bao gồm quái thường, quái hiếm và sinh vật phép thuật. 
+        Mỗi loại có hành vi và sức mạnh riêng, khiến việc khám phá trở nên nguy hiểm hơn.<br><br>
+
+        <b>Vũ khí và trang bị</b><br>
+        CoreCraft bổ sung hơn 60 loại vũ khí và công cụ mới như kiếm, cung, gậy phép. Một số vũ khí có hiệu
+         ứng đặc biệt, giúp người chơi xây dựng nhiều lối chơi khác nhau như chiến binh, cung thủ hoặc pháp sư.<br><br>
+
+        <b>Block và vật phẩm</b><br>
+        Mod thêm hơn 100 block và vật phẩm mới, bao gồm block trang trí, nguyên liệu chế tạo và các item đặc biệt 
+        từ các dimension. Điều này giúp người chơi có thêm nhiều lựa chọn xây dựng và khám phá.<br><br>
+
+        <b>Biome mới</b><br>
+        CoreCraft thêm hơn 14 biome mới với môi trường đa dạng như rừng phép thuật, vùng đất hoang và hang động sâu. 
+        Mỗi biome có mob và tài nguyên riêng, tạo cảm giác mới mẻ khi khám phá.<br><br>
+
+        <b>Gameplay thay đổi</b><br>
+        CoreCraft không còn là Minecraft sinh tồn thông thường mà trở thành một game RPG thực thụ:<br>
+        - Có tiến trình phát triển (progression)<br>
+        - Khám phá thế giới mới<br>
+        - Đánh boss để lấy trang bị mạnh hơn<br>
+        - Tăng độ khó và chiều sâu gameplay<br><br>
+
+        <b>Tổng kết</b><br>
+        CoreCraft là một mod lớn với lượng nội dung rất nhiều, phù hợp với người chơi thích phiêu lưu, 
+        khám phá và chiến đấu với boss. Mod mang lại trải nghiệm hoàn toàn mới so với Minecraft gốc và có thể 
+        coi như một “bản mở rộng RPG” đầy đủ cho trò chơi.
+        
+    </p>
+    <br>
+
+    <!-- Download -->
+     <button class="download" onclick="handleDownload()">Tải xuống</button>
+
+    </div><br><br><br>
+
+    <script src="../../../Detail.js"></script>
+    <script>
+        function handleDownload() {
+        const daTai = localStorage.getItem("daTaiFile");
+
+            if (daTai === "true") {
+                // Đã tải rồi → vào trang download
+                window.location.href = "TaiXuong.html";
+            } else {
+                // Chưa tải → đi quảng cáo
+                window.location.href = "https://yeumoney.com/go/fBo7m2Ii";
+            }
+        }
+    </script>
+</body>
+</html>
