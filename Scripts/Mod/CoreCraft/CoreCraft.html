@@ -22,6 +22,9 @@
          style="background-image: url('Core-Craft.webp'); background-size: cover;">
     </div>
 
+    <!-- Name -->
+    <h2>Core Craft</h2><br>
+
     <!-- Image -->
     <div class="content-img" id="contentImgs">
         <!-- video -->
@@ -35,10 +38,7 @@
         <img src="anh1.png">
         <img src="anh2.png">
         <img src="anh3.png">
-    </div>
-
-    <!-- Name -->
-    <h2>Core Craft</h2><br><br><br>
+    </div><br><br><br>
 
     <!-- Description -->
     <p id="desc">
@@ -89,6 +89,7 @@
     <br>
 
     <!-- Download -->
+     <p id="timeText">Thời gian không cần vượt link còn lại là: 00:00:00:00</p>
      <button class="download" onclick="handleDownload()">Tải xuống</button>
 
     </div><br><br><br>
@@ -96,16 +97,66 @@
     <script src="../../../Detail.js"></script>
     <script>
         function handleDownload() {
-        const daTai = localStorage.getItem("daTaiFile");
+            const expire = localStorage.getItem("CorecRaft");
 
-            if (daTai === "true") {
+            if (expire && Date.now() < expire) {
                 // Đã tải rồi → vào trang download
-                window.location.href = "TaiXuong.html";
+                window.open("TaiXuong.html", "_blank");
             } else {
                 // Chưa tải → đi quảng cáo
-                window.location.href = "https://yeumoney.com/go/fBo7m2Ii";
+                window.open("https://yeumoney.com/go/fBo7m2Ii", "_blank");
             }
         }
+
+        // format 2 chữ số
+        function f(n) {
+            return n.toString().padStart(2, "0");
+        }
+
+        function updateTime() {
+            const expire = localStorage.getItem("CorecRaft");
+            const text = document.getElementById("timeText");
+
+            if (!expire || Date.now() >= expire) {
+                text.innerText = "Thời gian không cần vượt link còn lại là: 0";
+                localStorage.removeItem("CorecRaft");
+                return;
+            }
+
+            let remaining = expire - Date.now();
+
+            let days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+            let minutes = Math.floor((remaining / (1000 * 60)) % 60);
+            let seconds = Math.floor((remaining / 1000) % 60);
+
+            let display = "";
+
+            if (days > 0) {
+                // DD:HH:MM:SS
+                display = `${f(days)}:${f(hours)}:${f(minutes)}:${f(seconds)}`;
+            } 
+            else if (hours > 0) {
+                // HH:MM:SS
+                display = `${f(hours)}:${f(minutes)}:${f(seconds)}`;
+            } 
+            else if (minutes > 0) {
+                // MM:SS
+                display = `${f(minutes)}:${f(seconds)}`;
+            } 
+            else {
+                // SS
+                display = `${f(seconds)}`;
+            }
+
+            text.innerText = `Thời gian không cần vượt link còn lại là: ${display}`;
+        }
+
+        // chạy ngay
+        updateTime();
+
+        // cập nhật mỗi giây
+        setInterval(updateTime, 1000);
     </script>
 </body>
 </html>
