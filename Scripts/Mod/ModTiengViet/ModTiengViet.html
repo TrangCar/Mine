@@ -122,12 +122,12 @@
         }
 
         function updateTime() {
-            const expire = localStorage.getItem("InsaneDisasters");
+            const expire = localStorage.getItem("ModTiengViet");
             const text = document.getElementById("timeText");
 
             if (!expire || Date.now() >= expire) {
                 text.innerText = "Thời gian không cần vượt link còn lại là: 0";
-                localStorage.removeItem("InsaneDisasters");
+                localStorage.removeItem("ModTiengViet");
                 return;
             }
 
