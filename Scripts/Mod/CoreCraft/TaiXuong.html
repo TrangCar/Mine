@@ -70,7 +70,10 @@
         <p>Nhấn nút bên dưới để tải file</p>
 
         <button class="download-btn" onclick="downloadFile()">
-            Tải xuống
+            Core Craft
+        </button>
+        <button class="download-btn" onclick="downloadFile1()">
+            Core Craft Việt hóa
         </button>
 
         <!-- Quảng cáo -->
@@ -83,16 +86,42 @@
 
     <script>
         function downloadFile() {
-            // 30 ngày (ms)
-            const duration = 30 * 24 * 60 * 60 * 1000;
-            // thời gian hết hạn
-            const expireTime = Date.now() + duration;
-            // lưu thời gian hết hạn
-            localStorage.setItem("CorecRaft", expireTime);
+            const mode = localStorage.getItem("DownloadMode");
+
+            // ===== CƠ CHẾ 1 =====
+            if (mode === "1") {
+                const duration = 30 * 24 * 60 * 60 * 1000;
+                const expireTime = Date.now() + duration;
+                localStorage.setItem("CorecRaft", expireTime);
+            }
+
+            // ===== CƠ CHẾ 2 =====
+            if (mode === "2") {
+                localStorage.setItem("CorecRaft2", "false");
+            }
+
             // link tải thật
             window.open("https://github.com/TrangCar/Mine/releases/download/CoreCraft/core-craft_v1.1.2.mcaddon","_blank");
         }
-</script>
+        function downloadFile1() {
+            const mode = localStorage.getItem("DownloadMode");
+
+            // ===== CƠ CHẾ 1 =====
+            if (mode === "1") {
+                const duration = 30 * 24 * 60 * 60 * 1000;
+                const expireTime = Date.now() + duration;
+                localStorage.setItem("CorecRaft", expireTime);
+            }
+
+            // ===== CƠ CHẾ 2 =====
+            if (mode === "2") {
+                localStorage.setItem("CorecRaft2", "false");
+            }
+
+            // link tải thật
+            window.open("https://github.com/TrangCar/KhoModMC/releases/download/CoreCraft_VietHoa/Core.Craft.Vi.t.Hoa.mcaddon","_blank");
+        }
+    </script>
 
 </body>
 </html>
