@@ -103,7 +103,7 @@ body {
 .card .image {
     height: 120px; /* sửa ở đây*/
     border-radius: 10px 10px 0 0;
-    background-color: #ddd;
+    background-color: #000000;
     background-size: cover;
     background-position: center;
     transition: all 0.3s ease;
