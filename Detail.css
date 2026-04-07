@@ -17,7 +17,7 @@ body {
 }
 
 #desc a {
-    color: blue;
+    color: rgb(74, 74, 124);
     text-decoration: underline;
 }
 
@@ -71,12 +71,18 @@ body {
     font-size: 25px;
 }
 
+.banner img {
+    max-height: 70%;
+    max-width: 70%;
+    object-fit: contain;
+}
+
 /* Avatar */
 /* Avatar luôn nổi lên */
 .avatar {
     width: 120px;
     height: 120px;
-    background: gray; /* mặc định nếu chưa có hình */
+    background: rgb(0, 0, 0); /* mặc định nếu chưa có hình */
     margin: -60px auto 10px;
     border-radius: 15px;
     display: flex;

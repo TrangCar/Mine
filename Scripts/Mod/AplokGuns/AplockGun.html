@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>AplokGuns</title>
+    <link rel="stylesheet" href="../../../Detail.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+</head>
+<body>
+
+    <!-- Back -->
+    <div class="back" onclick="goBack()">quay lại</div>
+
+    <!-- Banner -->
+    <div class="banner" id="banner"
+         style="background-image: url(''); background-size: cover;">
+        <img src="logo.png" alt="banner">
+    </div>
+
+    <!-- Avatar -->
+    <div class="avatar"
+         style="background-image: url('Avarter.png'); background-size: cover;">
+    </div>
+
+    <!-- Name -->
+    <h2>Aplok Guns v1.1.8</h2><br>
+
+    <!-- Image -->
+    <div class="content-img" id="contentImgs">
+        <!-- video -->
+        <iframe id="ytVideo"
+            src="https://www.youtube.com/embed/1k8b2_yhAzA?autoplay=1&mute=1&loop=1&playlist=1k8b2_yhAzA&enablejsapi=1"
+            frameborder="0"
+            allow="autoplay"
+            allowfullscreen>
+        </iframe>
+        <!-- Ảnh -->
+        <img src="anh1.jpg">
+        <img src="anh2.jpg">
+        <img src="anh3.jpg">
+        <img src="Giap.jpg">
+    </div><br><br><br>
+
+    <!-- Description -->
+    <p id="desc">
+        <b>Aplok Guns</b>
+        là một bản mod thân thiện với chế độ sinh tồn, mang chủ đề quân sự, với các loại vũ khí kiểu gốc,
+        hiệu ứng âm thanh sống động, hoạt ảnh được trau chuốt, chất nổ, áo giáp tùy chỉnh và các khối xây 
+        dựng—tất cả đều được chế tác với sự chú ý tỉ mỉ đến từng chi tiết. <br>
+        <b>Nhà phát triển:</b>
+        <a href="https://www.curseforge.com/linkout?remoteUrl=https%253a%252f%252fgabriel-aplok.com%252fabout.html" target="_blank">Gabriel Aplok</a> (Trưởng nhóm phát triển) <br>
+        <b>Đặc trưng:</b><br>
+        _ Các mô hình và họa tiết vũ khí theo phong cách Vanilla <br>
+        _ Âm thanh không gian độ trung thực cao với hiệu ứng vang và khoảng cách. <br>
+        _ Hoạt ảnh nạp đạn và bắn đơn giản và được tối ưu hóa. <br>
+        _ Hiệu ứng hạt được tối ưu hóa hiệu suất <br>
+        _ Hệ thống gắn và sửa đổi tiên tiến <br>
+        _ Các vật phẩm hoàn toàn có thể chế tạo được cho lối chơi sinh tồn. <br>
+        _ Cơ chế chế tạo và bàn làm việc tùy chỉnh <br>
+        _ Mức sử dụng tài nguyên thấp, đảm bảo tương thích với mọi thiết bị. <br>
+        <b>Chú thích:</b> nguồn dự án bản mở rộng Aplok Guns | v1.1.8 có thẻ tham khảo 
+        <a href="https://trenbankai.com/projects/aplok-guns/" target="_blank">tại đây</a>
+    </p>
+    <br>
+
+    <!-- Download -->
+     <p id="timeText">Thời gian không cần vượt link còn lại là: 00:00:00:00</p>
+     <button class="download" onclick="handleDownload()">Tải xuống</button>
+
+    </div><br><br><br>
+
+    <!-- Tags -->
+    <div id="tagsDetail">
+        <p id="desc">
+            <b>Tags:</b> <br>
+            <a class="file-tag" href="../../../index.html?tag=Mod">#Mod</a>
+            <a class="file-tag" href="../../../index.html?tag=ThemSinhVat">#themsinhvat</a>
+            <a class="file-tag" href="../../../index.html?tag=MoRongTheGioiVaBiome">#morongthegioi&biome</a>
+            <a class="file-tag" href="../../../index.html?tag=XayDungVaTrangTri">#xaydung&trangtri</a>
+            <a class="file-tag" href="../../../index.html?tag=Modpack">#Modpack</a>
+
+        </p>
+    </div>
+
+    <!-- ================= POPUP ================= -->
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay hidden">
+
+    <!-- BOX CHỌN -->
+    <div id="chooseBox" class="popup show">
+
+        <h2>Chọn cơ chế tải</h2>
+
+        <div class="option" onclick="selectMode('1', this)">
+        <h3>Cơ chế 1</h3>
+        <p>Mỗi lần vượt link bạn sẽ có <b>30 ngày</b> không cần vượt link</p>
+        </div>
+
+        <div class="option" onclick="selectMode('2', this)">
+        <h3>Cơ chế 2</h3>
+        <p>Lần đầu <b>không cần vượt link</b>, các lần sau bắt buộc vượt</p>
+        </div>
+
+        <button class="btn confirm" onclick="confirmMode()">Xác nhận</button>
+    </div>
+
+    <!-- BOX XÁC NHẬN -->
+    <div id="confirmBox" class="popup hidden">
+
+        <h2>Xác nhận</h2>
+        <p>Bạn chắc chắn chọn cơ chế này?</p>
+
+        <div class="actions">
+        <button class="btn ok" onclick="saveMode()">Chắc chắn</button>
+        <button class="btn cancel" onclick="backChoose()">Chọn lại</button>
+        </div>
+
+    </div>
+
+    </div>
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script src="../../../Detail.js"></script>
+
+    <script src="Scripts.js"></script>
+</body>
+</html>
