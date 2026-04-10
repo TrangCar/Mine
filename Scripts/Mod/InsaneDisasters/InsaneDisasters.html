@@ -24,6 +24,9 @@
          style="background-image: url('avart.jpg'); background-size: cover;">
     </div>
 
+    <!-- Name -->
+    <h2>Core Craft</h2><br><br><br>
+
     <!-- Image -->
     <div class="content-img" id="contentImgs">
         <!-- Ảnh -->
@@ -39,10 +42,18 @@
         <img src="Anh10.webp">
         <img src="Anh11.webp">
         <img src="Anh12.webp">
-    </div>
+    </div> <br>
 
-    <!-- Name -->
-    <h2>Core Craft</h2><br><br><br>
+    <!-- ADS1 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2361555400616809"
+        data-ad-slot="8820781060"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script> <br>
 
     <!-- Description -->
     <p id="desc">
@@ -116,11 +127,33 @@
     </p>
     <br>
 
+    <!-- ADS1 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2361555400616809"
+        data-ad-slot="8820781060"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script> <br>
+
     <!-- Download -->
-     <p id="timeText">Thời gian không cần vượt link còn lại là: 00:00:00:00</p>
+     
      <button class="download" onclick="handleDownload()">Tải xuống</button>
 
-    </div><br><br><br>
+    </div><br>
+
+    <!-- ADS1 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2361555400616809"
+        data-ad-slot="8820781060"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script> <br>
 
     <!-- Tags -->
     <div id="tagsDetail">
@@ -132,66 +165,6 @@
     </div>
 
     <script src="../../../Detail.js"></script>
-    <script>
-        function handleDownload() {
-            const expire = localStorage.getItem("InsaneDisasters"); 
-
-            if (expire && Date.now() < expire) {
-                window.open("TaiXuong.html", "_blank");
-            } else {
-                 window.open("https://yeumoney.com/go/QfM1ighG", "_blank");
-            }
-        }
-
-        // format 2 chữ số
-        function f(n) {
-            return n.toString().padStart(2, "0");
-        }
-
-        function updateTime() {
-            const expire = localStorage.getItem("InsaneDisasters");
-            const text = document.getElementById("timeText");
-
-            if (!expire || Date.now() >= expire) {
-                text.innerText = "Thời gian không cần vượt link còn lại là: 0";
-                localStorage.removeItem("InsaneDisasters");
-                return;
-            }
-
-            let remaining = expire - Date.now();
-
-            let days = Math.floor(remaining / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
-            let minutes = Math.floor((remaining / (1000 * 60)) % 60);
-            let seconds = Math.floor((remaining / 1000) % 60);
-
-            let display = "";
-
-            if (days > 0) {
-                // DD:HH:MM:SS
-                display = `${f(days)}:${f(hours)}:${f(minutes)}:${f(seconds)}`;
-            } 
-            else if (hours > 0) {
-                // HH:MM:SS
-                display = `${f(hours)}:${f(minutes)}:${f(seconds)}`;
-            } 
-            else if (minutes > 0) {
-                // MM:SS
-                display = `${f(minutes)}:${f(seconds)}`;
-            } 
-            else {
-                // SS
-                display = `${f(seconds)}`;
-            }
-
-            text.innerText = `Thời gian không cần vượt link còn lại là: ${display}`;
-        }
-
-        // chạy ngay
-        updateTime();
-
-        // cập nhật mỗi giây
-        setInterval(updateTime, 1000);
-    </script>
+    <script src="Scripts.js"></script>
 </body>
 </html>
